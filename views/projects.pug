@@ -1,0 +1,39 @@
+extends layout
+
+block content
+    section.bg-primary#portfolio.p-0
+      .container-fluid.p-0
+            //- mixin project-card(project)
+            //-   div.col-lg-4.col-sm-6
+            //-     a.portfolio-box(href='images/portfolio/fullsize/' + project.imageName)
+            //-       img.img-fluid(src='images/portfolio/thumbnails/' + project.imageName, alt='')
+            //-       .portfolio-box-caption
+            //-         .portfolio-box-caption-content
+            //-           .project-category.text-faded
+            //-             |  #{project.category}
+            //-           .project-name
+            //-             |  #{project.title}
+            //- for project in projectList
+            //-     +project-card(project)
+            .col-lg-8.mx-auto.text-center
+                h2.section-heading.text-white
+                  | Projects
+                  h2
+                    hr.light.my-4
+            .row.no-gutters.popup-gallery
+                mixin project-card(project)
+                    div.col-lg-4.col-sm-6
+                        h2.project-title= project.title
+                        p= project.description
+                        ul.languages
+                            each language in project.languages
+                                li= language
+                            div.semester
+                                if project.semester == 6
+                                    i I am currently working on this projects
+                                else
+                                    i Semester #{project.semester}
+                for project in projectList
+                    +project-card(project)
+
+

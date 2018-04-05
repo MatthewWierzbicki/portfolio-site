@@ -1,0 +1,97 @@
+extends layout
+block content
+  section#about.bg-primary
+      .container
+        .row
+          .col-lg-8.mx-auto.text-center
+            h2.section-heading.text-white Lorem ipsum dolor sit amet!
+            hr.light.my-4
+            p.text-faded.mb-4
+              |  The projects showcased on this page show my development as a programmer. From my first fully functional web-site, The Royal Realtor, which was created in my second year of Academic study to some of my more recent projects like this portfolio. All of which are linked and displayed below. 
+            a.btn.btn-light.btn-xl.js-scroll-trigger(href='#portfolio') The next section
+  //- section#services
+  //-     .container
+  //-       .row
+  //-         .col-lg-12.text-center
+  //-           h2.section-heading 
+  //-           hr.my-4
+  //-     .container
+  //-       .row
+  //-         .col-lg-3.col-md-6.text-center
+  //-           .service-box.mt-5.mx-auto
+  //-             i.fa.fa-4x.fa-diamond.text-primary.mb-3.sr-icons
+  //-             h3.mb-3 Lorem ipsum
+  //-             p.text-muted.mb-0 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  //-         .col-lg-3.col-md-6.text-center
+  //-           .service-box.mt-5.mx-auto
+  //-             i.fa.fa-4x.fa-paper-plane.text-primary.mb-3.sr-icons
+  //-             h3.mb-3 Lorem ipsum dolor 
+  //-             p.text-muted.mb-0 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua!
+  //-         .col-lg-3.col-md-6.text-center
+  //-           .service-box.mt-5.mx-auto
+  //-             i.fa.fa-4x.fa-newspaper-o.text-primary.mb-3.sr-icons
+  //-             h3.mb-3 Lorem ipsum dolor
+  //-             p.text-muted.mb-0 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  //-         .col-lg-3.col-md-6.text-center
+  //-           .service-box.mt-5.mx-auto
+  //-             i.fa.fa-4x.fa-heart.text-primary.mb-3.sr-icons
+  //-             h3.mb-3 Lorem ipsum dolor
+  //-             p.text-muted.mb-0 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua!
+  section.bg-primary#portfolio.p-0
+      .container-fluid.p-0
+          .row.no-gutters.popup-gallery
+            mixin project-card(project)
+              div.col-lg-4.col-sm-6
+                a.portfolio-box(href='https://github.com/MatthewWierzbicki/PressStartOshawa')
+                  img.img-fluid(src='images/portfolio/thumbnails/' + project.imageName)
+                  .portfolio-box-caption
+                    .portfolio-box-caption-content
+                      .project-category.text-faded
+                        |  #{project.category}
+                      .project-name
+                        |  #{project.title}
+            for project in projectList
+                +project-card(project)
+  section.bg-dark.text-white
+      .container.text-center
+        h2.mb-4 Lorem ipsum dolor sit amet
+        a.btn.btn-light.btn-xl.sr-button(href='http://www.neopets.com/') Lorem ipsum!
+  section#contact
+      .container
+        .row
+          .col-lg-8.mx-auto.text-center
+            h2.section-heading Contact Information
+            hr.my-4
+            p.mb-5
+              | Contact me for business inquiries either by phone or by email.
+        .row
+          .col-lg-4.ml-auto.text-center
+            i.fa.fa-phone.fa-3x.mb-3.sr-contact
+            p (289)-404-2560
+          .col-lg-4.mr-auto.text-center
+            i.fa.fa-envelope-o.fa-3x.mb-3.sr-contact
+            p
+              a(href='mailto:wierz.matthew@gmail.com') wierz.matthew@gmail.com
+
+          // Bootstrap core JavaScript
+          // Bootstrap core JavaScript
+          script(src='/javascripts/jquery/jquery.min.js')
+          script(src='/javascripts/bootstrap/bootstrap.bundle.min.js')
+          // Plugin JavaScript
+          script(src='/javascripts/jquery-easing/jquery.easing.min.js')
+          script(src='/javascripts/scrollreveal/scrollreveal.min.js')
+          script(src='/javascripts/magnific-popup/jquery.magnific-popup.min.js')
+          // Custom scripts for this template
+          script(src='/javascripts/creative.js')
+
+
+
+
+
+
+
+
+
+
+
+
